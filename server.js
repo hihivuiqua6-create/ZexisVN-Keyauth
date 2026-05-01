@@ -337,11 +337,11 @@ async function initializeFiles() {
     }
 
     if (!fsSync.existsSync(CONFIG_FILE)) {
-      const adminPassword = process.env.ADMIN_PASSWORD || '1';
+      const adminPassword = process.env.ADMIN_PASSWORD || 'zzauthkey';
       const hash = await bcrypt.hash(adminPassword, 10);
       const cfg = {
         admin: {
-          username: 'admin',
+          username: 'authkey',
           passwordHash: hash
         },
         contact: {
